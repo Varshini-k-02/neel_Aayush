@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>User Login/ Signup</title>
+  
+  <link href="{% static 'styles/loginn.css' %}" rel="stylesheet" type="text/css"/>
+  <link href="{% static 'styles/styles.css' %}" rel="stylesheet" type="text/css"/>
+  <link rel="shortcut icon" type="image/x-icon" href="assets/logo.png">
+ 
+    <style>
+      .front_card {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 650px;
+        background-image: linear-gradient(135deg, #f5f7fa 10%, #c3cfe2 100%);
+        display: flex;
+      
+        clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+        /*clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);*/
+        transition: clip-path 0.5s ease;
+      }
+      
+        <!-- #id_is_user{
+        position: relative;
+        left:-25px;
+        }
+        #id_is_employee{
+            position: relative;
+            left:-2px;
+        }
+        #id_is_admin{
+                position: relative;
+                left:-17px;
+            } -->
+        #labels{
+            position: relative;
+           
+            right:-10px;
+    }
+    .form-control{
+    padding:4px 4px 4px 4px;
+    }
+        
+
+        </style>
+</head>
+<body>
+  <div class="container">
+    <div class="front_card">
+      
+        <form action="#" class="login_form" method="POST">
+          <h1>Login</h1>
+          {% csrf_token %}
+          <label for="username">Username</label>
+          {{ form.username }}      
+          <label for="password">Password</label>
+          {{ form.password }}
+          <a href="#"><p><u>Forgot password?</u></p></a>
+          <button class="login_btn">
+            Login</button>
+            
+        </form>
+       
+        <form action="{% url 'login' %}" class="signup_form" method="POST">
+            {% csrf_token %}
+          <h1>Signup</h1>
+          <label for="username">Username</label>
+          {{ form.username }}
+          <label for="email">Email</label>
+          {{ form.email}}
+          <label for="password">Password</label>
+          {{ form.password1 }}
+          <label for="password">Password</label>
+          {{ form.password2 }}
+          
+            
+          <button class="login_btn">Signup</button>
+        </form>
+      </div>
+      <div class="back_card">
+        <div class="login_msg">
+          <p>Already have an account?</p>
+          <button action="{% url 'login' %}" class="login_msg_btn">
+            Log-in</button>
+        </div>
+        <div class="signup_msg">
+          <p>Don't have an account?</p>
+          <button class="signup_msg_btn">Sign-up</button>
+        </div>
+      </div>
+    </div>
+
+
+  <script>
+    const frontCard = document.querySelector(".front_card");
+const signUpBtn = document.querySelector(".signup_msg_btn");
+const loginBtn = document.querySelector(".login_msg_btn");
+const userEmailInp = document.querySelector(".user_email");
+const userFNameInp = document.querySelector(".user_full_name");
+
+signUpBtn.addEventListener("click", () => {
+  frontCard.classList.add("front_card_signup");
+  userFNameInp.focus();
+});
+
+loginBtn.addEventListener("click", () => {
+  frontCard.classList.remove("front_card_signup");
+  userEmailInp.focus();
+});
+  </script>
+</body>
+</html>

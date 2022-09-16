@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link href="{% static 'styles/styles.css' %}" rel="stylesheet" type="text/css"/>
+  <link href="{% static 'styles/profile.css' %}" rel="stylesheet" type="text/css"/>
+  <link href="{% static 'styles/complaint.css' %}" rel="stylesheet" type="text/css"/>
+  <link rel="shortcut icon" type="image/x-icon" href="assets/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="profile">
+  <div class="navbar-top">
+        <div class="title">
+            <h1>Profile</h1>
+        </div>
+
+        <!-- Navbar -->
+        <ul>
+            <li>
+                <a href="#home">
+                    <i class="fa fa-home fa-2x"></i>
+                </a>
+            </li>
+        </ul>
+        <!-- End -->
+    </div>
+    <!-- End -->
+
+    <!-- Sidenav -->
+    <div class="sidenav">
+        <div class="profile">
+            <img src="assets/robo.png" alt="" width="100" height="100">
+
+            <div class="name">
+                Aayush
+            </div>
+            <div class="job">
+                Developer
+            </div>
+        </div>
+
+        <div class="sidenav-url">
+            <div class="url">
+                <a href="{% url 'userprofile' %}" class="active">Profile</a>
+                <hr align="center">
+            </div>
+            <div class="url">
+                <a href="{% url 'complaint' %}">File a Complaint</a>
+                <hr align="center">
+            </div>
+        </div>
+    </div>
+    <!-- End -->
+
+    <!-- Main -->
+    <div class="main">
+        <div class="card">
+            <div class="card-body">
+                <i class="fa fa-pen fa-2x edit"></i>
+                <form>
+                   <h3>Identity</h3>
+                  <div>
+                    <label for="name">Username:</label>
+                    <input id="name" name="Aayush123">
+                  </div>
+                   <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="Name">
+                  </div>
+                  <div>
+                    <label for="name">Sector:</label>
+                    <select>
+                      <option>Private</option>
+                      <option>Public</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="name">State:</label>
+                    <select>
+                      <option>Andhra Pradesh</option>
+                      <option>Arunachal Pradesh</option>
+                      <option>Assam</option>
+                      <option>Bihar</option>
+                      <option>Chhattisgarh</option>
+                      <option>Goa</option>
+                      <option>Gujarat</option>
+                      <option>Haryana</option>
+                      <option>Himachal Pradesh</option>
+                      <option>Jharkhand</option>
+                      <option>Karnataka</option>
+                      <option>Kerala</option>
+                      <option>Madhya Pradesh</option>
+                      <option>Maharashtra</option>
+                      <option>Manipur</option>
+                      <option>Meghalaya</option>
+                      <option>Mizoram</option>
+                      <option>Nagaland</option>
+                      <option>Odisha</option>
+                      <option>Punjab</option>
+                      <option>Rajasthan</option>
+                      <option>Sikkim</option>
+                      <option>Tamil Nadu</option>
+                      <option>Telangana</option>
+                      <option>Tripura</option>
+                      <option>Uttar Pradesh</option>
+                      <option>Uttarakhand</option>
+                      <option>West Bengal</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label>Address:</label>
+                    <textarea></textarea>
+                  </div>
+                  <div>
+                    <label>Email:</label>
+                    <input type="email">
+                  </div>
+                  <div>
+                    <label>Aadhar:</label>
+                    <input type="file" id="myFile" name="filename">
+                  </div>
+                  <div>
+                    <label>Pan</label>
+                    <input type="file" id="myFile" name="filename">
+                  </div>
+                <h3>Company Details</h3>
+                  <div>
+                    <label>Company Name:</label>
+                    <input type="text"  name="cname">
+                  </div>
+                  <div>
+                    <label>Position:</label>
+                    <input type="text">
+                  </div>
+                  <div>
+                    <label for="name">State:</label>
+                    <select>
+                      <option>Andhra Pradesh</option>
+                      <option>Arunachal Pradesh</option>
+                      <option>Assam</option>
+                      <option>Bihar</option>
+                      <option>Chhattisgarh</option>
+                      <option>Goa</option>
+                      <option>Gujarat</option>
+                      <option>Haryana</option>
+                      <option>Himachal Pradesh</option>
+                      <option>Jharkhand</option>
+                      <option>Karnataka</option>
+                      <option>Kerala</option>
+                      <option>Madhya Pradesh</option>
+                      <option>Maharashtra</option>
+                      <option>Manipur</option>
+                      <option>Meghalaya</option>
+                      <option>Mizoram</option>
+                      <option>Nagaland</option>
+                      <option>Odisha</option>
+                      <option>Punjab</option>
+                      <option>Rajasthan</option>
+                      <option>Sikkim</option>
+                      <option>Tamil Nadu</option>
+                      <option>Telangana</option>
+                      <option>Tripura</option>
+                      <option>Uttar Pradesh</option>
+                      <option>Uttarakhand</option>
+                      <option>West Bengal</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label>Address:</label>
+                    <textarea></textarea>
+                  </div>
+                  <div>
+                    <label>Company size:</label>
+                    <input type="text">
+                  </div>
+                  <div>
+                    <label>Company emp id:</label>
+                    <input type="text">
+                  </div>
+                  <a href="#"><button>Save</button></a>
+                  <a href="#"><button>Cancel</button></a>
+                </form>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- End -->
+</body>
+<!--translate-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+  jQuery('.lang-select').click(function () {
+    var theLang = jQuery(this).attr('data-lang');
+    jQuery('.goog-te-combo').val(theLang);
+
+    window.location = jQuery(this).attr('href');
+    location.reload();
+  });
+</script>
+<script type="text/javascript"
+  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!--translate-->
+</html>
