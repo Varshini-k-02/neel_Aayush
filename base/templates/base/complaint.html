@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Complaint Redressal</title>
+  <link href="{% static 'styles/complaint.css' %}" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>body {
+  font-family: "Poppins", sans-serif;
+  background: #f2f2f2;
+  text-align: center;
+ top: 0px !important;
+}
+.goog-te-banner-frame.skiptranslate {
+   display: none !important;
+   } 
+
+
+.user-form{
+ margin: 50px 250px 20px 250px;
+ background:white;
+ text-align:center;
+ 
+ border-top: 5px solid #217aff;
+}
+h1{
+ text-decoration: underline #217aff;
+}
+form select, input{
+ margin-bottom: 20px;
+ padding: 10px 20px;
+}
+form input{
+ padding: 10px 183px 10px 20px;
+}
+textarea{
+ padding: 10px 188px 100px 20px
+}
+.upload{
+ margin: 5px 0px 0px 45px;
+}
+::placeholder{
+  font-family:"Poppins", sans-serif;
+}
+.button{
+ background-color: #217aff;
+ border-color:#217aff;
+ color:white;
+ cursor:pointer;
+ padding: 10px 20px;
+}
+.credit{
+ text-decoration:none;
+}
+/* #myFile{
+ positive:relative;
+ right:20px;
+} */</style>
+<body>
+<div class="user-form">
+      <h1>Complaint Redressal</h1>
+    <div class="user-input">
+        <form action="" method="POST">
+
+            {% csrf_token %}
+              <div class="types">
+                <select aria-required name="type">
+                  <option>Select the type of grievances</option>
+                  <option>Inadequate Wages and Bonus</option>
+                  <option>Unachievable and Irrational Targets and Standards</option>
+                  <option>Bad Working Conditions</option>
+                  <option>Inadequate health and Safety Services</option>
+                  <option>Strained Relationship Amongst the employees</option>
+                  <option>Layoffs and retrenchment</option>
+                  <option>Lack of Career Planning and Employee Development</option>
+                  <option>Other</option>
+                </select>
+               </div>
+              <div class="speech" id="labnol" method="get" action="#">
+                <input name="subject" type="text" placeholder="Subject" required>
+              </div>
+              <div class="desc">
+                <textarea name="desc" placeholder="Description" required></textarea>
+              </div>
+          <div class="upload">
+            <input name="link" type="text" placeholder="Insert drive link" id="myFile" name="filename" required>
+          </div>
+            <div class="input_field checkbox_option">
+            	<input type="checkbox" id="cb1">
+    			    <label>I agree with terms and conditions</label>
+            </div>
+          <input class="button" type="submit" value="Register" />
+        </form>
+      </div>
+</div>
+<p class="credit">Developed by <a href="#"><span style="color:#217aff">Gordian Tekkies</span></a></p>
+  <script>
+  function startDictation() {
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+      var recognition = new webkitSpeechRecognition();
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.lang = 'en-US';
+      recognition.start();
+
+      recognition.onresult = function (e) {
+        document.getElementById('transcript').value = e.results[0][0].transcript;
+        recognition.stop();
+        document.getElementById('labnol').submit();
+      };
+
+      recognition.onerror = function (e) {
+        recognition.stop();
+      };
+    }
+  }
+</script>
+</body>
+</html>

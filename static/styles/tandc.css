@@ -1,0 +1,30 @@
+.topic h1{
+    margin-top: 30px;
+    font-size: 60px;
+  }
+  .topic hr{
+    width: 30%;
+    background-color: black;
+  }
+  .topic p{
+    margin: 30px 300px 0px 300px;
+    text-align: left;
+    font-size: 20px;
+  }
+  br{
+    margin: 20px;
+  }
+  .topic a button{
+    margin: 30px;
+    border-color: #217AFF;
+    background-color:white;
+    color: #217AFF;
+    border-radius: 25px;
+    padding: 10px 25px;
+  }
+  .topic a button:hover{
+    color:white;
+    border-color: #217AFF;
+    background-color:#217AFF;
+    cursor: pointer;
+  }

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+body{
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+.main{
+  margin: 30px;
+}
+.card{
+  margin-top: 20px;
+  margin-left: 350px;
+  margin-right: 350px;
+  margin-bottom: 20px;
+}
+.card-body form div{
+  margin: 20px;
+  text-align: left;
+}
+button{
+  padding: 5px 20px 5px 20px;
+  background-color: #217aff;
+  color:white;
+  border-color: #217aff;
+}

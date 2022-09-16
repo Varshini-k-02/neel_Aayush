@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>About Us</title>
+  <link href="{% static 'styles/styles.css' %}" rel="stylesheet" type="text/css"/>
+   <link href="{% static 'styles/tandc.css' %}" rel="stylesheet" type="text/css"/>
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="about">
+<div class="navbar">
+  <a href="{% url 'home' %}"><img src="{% static 'images/logo.png'%}"></a>
+  <div class="nav-right">
+  <a href="{% url 'tandc' %}" target="_blank">T&C</a>
+  <a href="{% url 'support' %}" target="_blank">FAQ's</a>
+  <a href="{% url 'complaint' %}" target="_blank"><i class="fa fa-address-book-o" aria-hidden="true"></i></a>
+  </div>
+</div>
+<div class="topic">
+  <h1>About <span style="color: #8EFF84;">Us</span></h1>
+  <hr>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. At viverra lacus vitae a molestie turpis. Amet neque turpis sit nunc, ut varius praesent fermentum vel. Tincidunt ac duis ultricies nisi nam enim, dictum. Eget nunc, sagittis sagittis vulputate nunc hendrerit augue suscipit neque. Nullam eget et, rhoncus vehicula purus dictum.</p> 
+
+<p>Euismod tristique amet, fringilla nunc, elit. Quam vitae at blandit lacus blandit scelerisque. Sed vulputate turpis a, nunc, nullam malesuada. Dolor mi aliquet sed pharetra ullamcorper. Enim erat venenatis amet consectetur amet, vel viverra quam turpis.</p> 
+
+<p>>Dignissim rhoncus turpis ut in. Platea volutpat lorem ultricies vulputate. Urna gravida quis turpis pulvinar amet, rhoncus. Tortor amet in scelerisque vitae pellentesque felis</p>
+
+<p>Nunc vel id tortor eget sit. Ut donec consequat aliquam odio quam sem amet rhoncus risus. Dignissim tortor tempor mattis augue nulla orci tortor elit. In eget vel pellentesque dictum sem ut sapien, aliquet. Consectetur mattis faucibus eleifend mi placerat. </p>
+
+<p>Consequat nibh diam tempus vel nec varius libero suspendisse elementum. In platea sit velit turpis magnis nam mi. Etiam nulla sed porta turpis ut aliquam quis. Tristique vitae, posuere varius sit vulputate aliquet et. Faucibus enim justo mattis id nec. Nec mi nulla nunc, gravida vestibulum quam tellus sapien erat.</p>
+
+<p>Eleifend rutrum eleifend ultricies egestas interdum. Sollicitudin habitant mauris, mattis a, placerat venenatis, varius. Habitant risus, eu sed ac. Sagittis lacus in libero ornare viverra diam. </p>
+
+<p>Adipiscing mollis dignissim aliquam, pellentesque eu. Praesent proin ultricies in sit amet tellus in duis mollis. Odio scelerisque condimentum quis condimentum velit, vel eget enim tellus. Enim libero sagittis consectetur a venenatis enim gravida. Tristique quam porttitor mollis interdum sit maecenas cras nam quisque. </p>
+
+<p>m, semper libero et aliquam. Nunc dignissim at tempus purus magna in duis placerat lacus.
+Placerat purus tristique elit et lacus non at vestibulum. Turpis.</p>
+  <a href="#" target="_blank"><button>File a complaint</button></a>
+</div>
+  <hr>
+<div class="tc">
+  <h2>Terms and Condition</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis morbi vel, porta nisl, molestie est. Phasellus adipiscing lobortis amet egestas eget diam leo. Duis quis cursus at dui enim proin at scelerisque diam.</p>
+</div>
+<footer>
+  <a href="{% url 'support' %}" target="_blank">Support</a>
+  <a>© 2022 AAYUSH All rights reserved</a>
+  <a href="privacy.html" target="_blank">Privacy Policy</a>
+</footer>
+</body>
+</html>

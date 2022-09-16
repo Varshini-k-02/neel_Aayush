@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Neel Aayush</title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://morrisjs.github.io/morris.js/css/morris.css'><link rel="stylesheet" href="{% static 'styles/emp.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+  <div class="">
+    <header class="navbar-fixed-top">
+      <div class="row">
+        <div class="container-fluid" style="background-color: white;">
+          <div class="pull-left">
+            <div class="pull-left logo text-center">
+              <!-- <span><img src="{% static 'images/logo.png' %}" style="width:200px"></img></span> -->
+            </div>
+<!--             <button class="btn btn-primary menu"><span class=
+            "glyphicon glyphicon glyphicon-menu-hamburger"></span></button> -->
+          </div>
+          <div class="pull-right">
+            <div class="marr20">
+              <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown task"></li><!-- /.dropdown -->
+               
+                <li class="dropdown user">
+                  <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#"><i class=
+                  "fa fa-user fa-fw"></i> </a>
+                  <ul class="dropdown-menu dropdown-user">
+                    <li>
+                      <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                      <a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    </li>
+                  </ul><!-- /.dropdown-user -->
+                </li><!-- /.dropdown -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="wrap">
+      <div class="side-menu" style="background-color: white;">
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="navbar-header">
+            <div class="brand-wrapper">
+
+          <div class="side-menu-container">
+            <ul class="nav navbar-nav" style="background-color:white">
+              <li>
+                <a href="#"><span class="glyphicon glyphicon-send"></span> Dashboard</a>
+              </li>
+             
+              <li>
+                <a href="{% url 'empcat' %}"><span class="glyphicon glyphicon-cloud"></span> Categories </a>
+              </li>
+              <!-- Dropdown-->
+              <li class="panel panel-default" id="dropdown">
+                <a data-toggle="collapse" href="#dropdown-lvl1"><span class="glyphicon glyphicon-user"></span> Complaints <span class="caret"></span></a> <!-- Dropdown level 1 -->
+                <div class="panel-collapse collapse" id="dropdown-lvl1">
+                  <div class="panel-body">
+                    <ul class="nav navbar-nav">
+                      <li>
+                        <a href="{% url 'empallcomp' %}">All complaints</a>
+                      </li>
+                      <li>
+                        <a href="{% url 'emppending' %}">Unopened complaints</a>
+                      </li>
+                      
+                      <!-- Dropdown level 2 -->
+                      
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+               
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </nav>
+      </div><!-- Main Content -->
+      <div class="container-fluid">
+        <div class="side-body">
+          <div class="page-title-box">
+            <h3 class="page-title pull-left">Dashboard</h3>
+            <ol class="breadcrumb pull-right">
+              <li>
+                <a href="#">home</a>
+              </li>
+              <li class="active">Dashboard</li>
+            </ol>
+            <div class="clearfix"></div>
+          </div>
+          <div class="row">
+            <div class="col-lg-8 col-sm-12">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="panel panel-primary">
+                    <div class="panel-heading">
+                      <div class="row">
+                        <div class="col-xs-9">
+                          <div class="huge">
+                            {{cnt}}
+                          </div>
+                          <div>
+                            Pending complaints
+                          </div>
+                        </div>
+                  
+                      </div>
+                    </div><a href="#">
+                    <div class="panel-footer">
+                      <span class="pull-left">View Details</span> <span class="pull-right"><i class=
+                      "fa fa-arrow-circle-right"></i></span>
+                      <div class="clearfix"></div>
+                    </div></a>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="panel panel-green">
+                    <div class="panel-heading">
+                      <div class="row">
+                        <div class="col-xs-9">
+                          <div class="huge">
+                            {{count}}
+                          </div>
+                          <div>
+                            All complaints
+                          </div>
+                        </div>
+                        <div class="col-xs-3 text-right">
+                          
+                        </div>
+                      </div>
+                    </div><a href="#">
+                    <div class="panel-footer">
+                      <span class="pull-left">View Details</span> <span class="pull-right"><i class=
+                      "fa fa-arrow-circle-right"></i></span>
+                      <div class="clearfix"></div>
+                    </div></a>
+                  </div>
+                </div>
+                
+
+  <script src='https://code.jquery.com/jquery-1.12.4.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js'></script>
+<script src='https://cdn.oesmith.co.uk/morris-0.4.1.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script >
+    var data = [
+  { year: '2012', a: 24.6, b: 30.9, c:24.8 },
+  { year: '2013', a: 30.0, b: 27.5, c:20.0 },
+  { year: '2014', a: 34.2, b: 20.3, c:18.3 },
+  { year: '2015', a: 43.0, b: 17.2, c:15.1 },
+  { year: '2016', a: 47.3, b: 12.3, c:11.4 }
+],
+config = {
+  lineColors:['#337ab7','#FF5722','#4CAF50'],
+  barColors:['#337ab7','#FF5722','#4CAF50'],
+  data: data,
+  xkey: 'year',
+  ykeys: ['a', 'b', 'c'],
+  labels: ['Google Chrome', 'Internet explorer', 'Mozilla firefox']
+};
+
+config.element = 'line-chart';
+Morris.Line(config);
+config.element = 'bar-chart';
+Morris.Bar(config);
+Morris.Donut({
+  element: 'donut-chart',
+  colors: ["#337ab7", "#4CAF50", "#FFC107", "#FF5722", "#5bc0de"],
+  data: [
+    {label: "Complete", value: 15},
+    {label: "Active", value: 35},
+    {label: "Pending", value: 25},
+    {label: "Re-open", value: 10},
+    {label: "New", value: 15}
+  ]
+});
+
+$(function () { 
+  $('button').click(function () {
+    $('.side-menu').toggleClass('off');
+    $('.side-body').toggleClass('full-width'); 
+    $('.side-footer').toggleClass('full-width'); 
+  });
+});
+</script>
+
+</body>
+</html>

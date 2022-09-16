@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Responsive Dashboard</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link rel='stylesheet' href='https://morrisjs.github.io/morris.js/css/morris.css'>
+  <link rel="stylesheet" href="{% static 'styles/userdash.css' %}">
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+
+  <body>
+    <div class="">
+      <header class="navbar-fixed-top">
+        <div class="row">
+          <div class="container-fluid" style="background-color: white;">
+            <div class="pull-left">
+              <div class="pull-left logo text-center">
+                <!-- <span><img src="logo.png" style="width: 200px;"></img></span> -->
+              </div>
+              <!--             <button class="btn btn-primary menu"><span class=
+            "glyphicon glyphicon glyphicon-menu-hamburger"></span></button> -->
+            </div>
+            <div class="pull-right">
+              <div class="marr20">
+                <ul class="nav navbar-top-links navbar-right">
+                  <li class="dropdown task"></li><!-- /.dropdown -->
+                  <li class="dropdown bell">
+                    <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#"><i
+                        class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                      <li>
+                        <a href="#">
+                          <div>
+                            <i class="fa fa-comment fa-fw"></i> New Comment <span class="pull-right text-muted small">4
+                              minutes ago</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <i class="fa fa-twitter fa-fw"></i> 3 New Followers <span
+                              class="pull-right text-muted small">12 minutes ago</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <i class="fa fa-envelope fa-fw"></i> Message Sent <span
+                              class="pull-right text-muted small">4
+                              minutes ago</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <i class="fa fa-tasks fa-fw"></i> New Task <span class="pull-right text-muted small">4
+                              minutes
+                              ago</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <i class="fa fa-upload fa-fw"></i> Server Rebooted <span
+                              class="pull-right text-muted small">4
+                              minutes ago</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a class="text-center" href="#"><strong>See All Alerts</strong> <i
+                            class="fa fa-angle-right"></i></a>
+                      </li>
+                    </ul><!-- /.dropdown-alerts -->
+                  </li><!-- /.dropdown -->
+                  <li class="dropdown user">
+                    <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#"><i
+                        class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu dropdown-user">
+                      <li>
+                        <a href="{% url 'userprofile' %}"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                      </li>
+                      
+                      <li class="divider"></li>
+                      <li>
+                        <a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                      </li>
+                    </ul><!-- /.dropdown-user -->
+                  </li><!-- /.dropdown -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="wrap">
+        <div class="side-menu" style="background-color: white;">
+          <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+              <div class="brand-wrapper">
+                
+              </div>
+            </div><!-- Main Menu -->
+            <div class="side-menu-container">
+              <ul class="nav navbar-nav" style="background-color:white">
+                <li>
+                  <a href="#"><span class="glyphicon glyphicon-send"></span> Dashboard </a>
+                </li>
+                <li>
+                  <a href="{% url 'usercomp' %}"><span class="glyphicon glyphicon-send"></span> Create Complaint</a>
+                </li>
+                <li>
+                  <a href="{% url 'usercompstatus' %}"><span class="glyphicon glyphicon-send"></span> Status</a>
+                </li>
+                
+                <li>
+                  <a href="{% url 'userprofile' %}"><span class="glyphicon glyphicon-send"></span>Profile</a>
+                </li>
+                <li>
+                  <a href="{% url 'table' %}"><span class="glyphicon glyphicon-send"></span>List of Nodal offices</a>
+                </li>
+                
+            </div>
+            </li>
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+        </nav>
+      </div><!-- Main Content -->
+      <div class="container-fluid">
+        <div class="side-body">
+          <div class="page-title-box">
+            <h3 class="page-title pull-left">Complaint status</h3>
+            <ol class="breadcrumb pull-right">
+              <li>
+                <!--                 <a href="#">home</a>
+              </li> -->
+                <!--               <li class="active">Dashboard</li> -->
+            </ol>
+            <div class="clearfix"></div>
+
+          </div>
+          <div class="container">
+            <table>
+              <thead>
+                <tr>
+                    <th>Ticket ID</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                   
+                    <th>Status</th>
+                    
+                    
+                </tr>
+              </thead>
+              <tbody>
+                {% for data in comp %}
+                {% if data.complainant == request.user %}
+                <tr>
+                  <td>{{data.ticketid}}</td>
+                  <td>{{data.type}}</td>
+                  <td>{{data.desc}}</td>
+                  <td>{{data.status}}</td>
+                </tr>
+                {% else %}
+                {% endif %}
+                {% endfor %}
+                
+
+              </tbody>
+            </table>
+            
+            <label for="file"><a href=""></a>Progress:</label>
+            <progress id="file" value="30" max="100"> </progress>
+
+            
+          </div>
+          <div class="row">
+            <div class="col-lg-10 col-sm-10">
+              <div class="row">
+                <!--                 <div class="col-sm-6"> -->
+                <!--                 <div class="panel panel-primary"> -->
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col-xs-9">
+                      <div class="huge">
+                      </div>
+                    </div>
+                  </div>
+
+
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+  </body>
+  <!-- partial -->
+  <script src='https://code.jquery.com/jquery-1.12.4.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js'></script>
+  <script src='https://cdn.oesmith.co.uk/morris-0.4.1.min.js'></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+  <script src="./script.js"></script>
+
+</body>
+
+</html>

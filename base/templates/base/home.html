@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neel Aayush</title>
+  <link href="{% static 'styles/styles.css' %}" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar">
+    <!--translate-->
+    <div class="contact-info d-flex align-items-center">
+      <a href="mailto:neelaayush.gov@gmail.com"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"><span
+            translate="no"> neelayush.gov@gmail.com</span></i></a>
+      <a><i class="fa fa-mobile fa-lg" aria-hidden="true"><span translate="no"> 011 2347 3349</span></i></a>
+      <a href="#googtrans(en|en)" class="lang-es lang-select" data-lang="en"><i class="fa fa-language fa-lg"
+          aria-hidden="true"><span translate="no"> English</span></i></a>
+      <!--translate-->
+    </div>
+    <div class="social-links d-none d-md-flex align-items-center">
+      <a href="https://twitter.com/LabourMinistry"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+      <a href="https://www.facebook.com/LabourMinistry"><i class="fa fa-facebook-official fa-lg"
+          aria-hidden="true"></i></a>
+      <a href="https://www.linkedin.com/company/ministry-of-labour-employment-government-of-india"><i
+          class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
+      <a href="https://www.instagram.com/labourministry"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
+    </div>
+  </section>
+  <!-- ======= Top Bar End ======= -->
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h1 class="logo"><a href="{% url 'home'%}">Neel Aayush<span>.Gov</span></a></h1>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class=" active" href="{% url 'home'%}">Home</a></li>
+          <li class="dropdown"><a href="#"><span>Services</span> <i class="fa fa-chevron-circle-down"
+                aria-hidden="true"></i></a>
+            <ul>
+              <li><a href="{% url 'complaint' %}">Register Complaint</a></li>
+              <li><a href="#">Track Complaint</i></a>
+              <li><a href="#">Employee Rights</i></a>
+              <li><a href="#">FAQ's</i></a>
+            </ul>
+          <li><a class="nav-link scrollto" href="{% url 'tandc' %}">T&C</a></li>
+          <li><a class="nav-link scrollto " href="{% url 'about' %}">About Us</a></li>
+          <!--translate-->
+          <li class="dropdown"><a><span>Language</span> <i class="fa fa-chevron-circle-down"></i></a>
+            <ul>
+              <li><a href="#googtrans(en|hi)" class="lang-es lang-select" data-lang="hi"><span
+                    translate="no">हिन्दी</span></a></li>
+              <li><a href="#googtrans(en|bn)" class="lang-es lang-select" data-lang="bn"><span
+                    translate="no">বাংলা</span></a></li>
+              <li><a href="#googtrans(en|gu)" class="lang-es lang-select" data-lang="gu"><span
+                    translate="no">ગુજરાતી</span></a></li>
+              <li><a href="#googtrans(en|kn)" class="lang-es lang-select" data-lang="kn"><span
+                    translate="no">ಕನ್ನಡ</span></a></li>
+              <li><a href="#googtrans(en|mr)" class="lang-es lang-select" data-lang="mr"><span
+                    translate="no">मराठी</span></a></li>
+              <li><a href="#googtrans(en|pa)" class="lang-es lang-select" data-lang="pa"><span
+                    translate="no">ਪੰਜਾਬੀ</span></a></li>
+              <li><a href="#googtrans(en|sd)" class="lang-es lang-select" data-lang="sd"><span
+                    translate="no">سنڌي</span></a></li>
+              <li><a href="#googtrans(en|ta)" class="lang-es lang-select" data-lang="ta"><span
+                    translate="no">தமிழ்</span></a></li>
+              <li><a href="#googtrans(en|te)" class="lang-es lang-select" data-lang="te"><span
+                    translate="no">తెలుగు</span></a></li>
+              <li><a href="#googtrans(en|ur)" class="lang-es lang-select" data-lang="ur"><span
+                    translate="no">اردو</span></a></li>
+            </ul>
+          </li>
+          <!--translate-->
+          <li><a href="{% url 'login'%}">Login</a></li>
+          <li><a href="{% url 'register'%}">Sign Up</a></li>
+          <li><a href="#">Profile</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- .navbar -->
+    </div>
+  </header>
+  <!-- End Header -->
+  <div class="container">
+    <!-- Intro section -->
+    <div class="intro">
+      <img src="{% static 'images/logo.png' %}">
+      <p>Welcome to Neel-Aayush <br></p>
+      <p style="font-size:30px">Here Employees are our Priority. Just a few clicks away, Voice out towards a
+        better working Nation!</p>
+      <div class="btns">
+        <a id="one" href="{% url 'complaint' %}" target="_blank"><button>File a complaint</button></a>
+        <a id="two" href="#" target="_blank"><button>Track your ticket</button></a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <div class="brief">
+      <img src="{% static 'images/img.png' %}">
+      <p>At times, our voices may not be heard or not taken into consideration but Neel Aayush is someone you can trust,
+        your complaints are guarded and forwarded to the right people without getting your extra attention. All work
+        done
+        perfectly and precisely.
+      </p>
+    </div>
+    <div class="know">
+      <h1>Know Your Rights</h1>
+      <p>Our rights are our own, nobody has any right to violate it in any manner.If your rights as an employee have
+        been violated in any manner, you are in the right place.Follow the procedure to raise your complaints.We are
+        here to solve it for you in the best possible manner.
+      </p>
+      <div class="its-btn">
+        <a id="three" href="{% url 'complaint' %}" target="_blank"><button>File a complaint</button></a>
+        <a id="four" href="#" target="_blank"><button>Your Rights</button></a>
+      </div>
+    </div>
+    <div class="t2s">
+      <h1><u>Text To Speech</u></h1>
+      <p>In case you woul like to listen to the website being read out, please click on the play button </p>
+ <audio controls id="music">
+ 
+ <source src="audio.mp3" type="audio/mpeg">
+ 
+ Your browser does not support the audio element.
+ 
+ </audio>
+ <p>Click the buttons to play or pause the music.</p>
+ <button onclick="play()" type="button">Play </button>
+ <button onclick="pause()" type="button">Pause</button>
+ </div>
+     <script>
+ 
+ var myMusic= document.getElementById("music");
+ 
+ function play() {
+ 
+ myMusic.play();
+ 
+ }
+ 
+  
+ 
+ function pause() {
+ 
+ myMusic.pause();
+ 
+ }
+ 
+ </script>
+    <hr>
+    <div class="tc">
+      <h2>Terms and Condition</h2>
+      <p>One of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of
+        information that is collected and recorded by Neel Aayush.com and how we use it. If you have additional
+        questions or require more information about our Privacy Policy, do not hesitate to
+        contact us.</p>
+    </div>
+    <!--footer-->
+    <footer>
+      <a href="{% url 'support' %}" target="_blank">Support</a>
+      <a>© 2022 NEEL AAYUSH. All rights reserved</a>
+      <a href="{% url 'privacy' %}" target="_blank">Privacy Policy</a>
+    </footer>
+    <!--end footer-->
+    <script src="script.js"></script>
+   
+
+</body>
+<!--translate-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+  jQuery('.lang-select').click(function () {
+    var theLang = jQuery(this).attr('data-lang');
+    jQuery('.goog-te-combo').val(theLang);
+
+    window.location = jQuery(this).attr('href');
+    location.reload();
+  });
+</script>
+<script type="text/javascript"
+  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!--translate-->
+<script src="https://app.wotnot.io/chat-widget/3sFSkXWUEruN173327799270EMdkM0Ep.js" ></script>
+</html>

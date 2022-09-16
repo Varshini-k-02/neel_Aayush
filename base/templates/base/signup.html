@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/signup.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/styles.css' %}">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/logo.png">
+</head>
+<style>
+  * {
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+  
+  
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+  
+    display: grid;
+    place-items: center;
+    background-color: white;
+  }
+  
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li,
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    position: relative;
+  }
+  
+  .front_card {
+    /* position: absolute;
+    left: 59%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 450px;*/
+    background-image: linear-gradient(135deg, #f5f7fa 10%, #c3cfe2 100%);
+    display: flex; 
+  
+    /* clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%); */
+    /*clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);*/
+    /* transition: clip-path 0.5s ease; */
+  }
+  
+  .front_card_behind {
+    position: absolute;
+    left: 9000%;
+    top: 550%;
+    transform: translate(-50%, -50%);
+    width: 1800px;
+    height: 457px;
+    background-image: linear-gradient(135deg, #fdfbfb 10%, #ebedee 100%);
+    display: flex;
+    filter: blur(100px); 
+    border-radius: 100px;
+  
+   
+  }
+  
+  
+  .front_card > .login_form {
+    opacity: 0;
+    transition: opacity 0.2s linear;
+   
+  }
+  
+  .front_card > .signup_form {
+    opacity: 1;
+    transition: opacity 0.2s linear;
+  }
+  
+  .front_card.front_card_signup > .login_form {
+    opacity: 0;
+  }
+  
+  .front_card.front_card_login {
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+  }
+  
+  .front_card.front_card_login > .login_form {
+    opacity: 1;
+  }
+  
+  .front_card form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .back_card {
+    width: 650px;
+    height: 350px;
+    background-color: #ecf0f3;
+    display: flex;
+    box-shadow:
+      4px 4px 10px #ecf0f3,
+      -4px -4px 10px #f9f9f9;
+  }
+  .back_card > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .back_card > div > p {
+    color: black;
+    margin-bottom: 20px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  /* input[type="tel"], */
+  input[type="password"] {
+    outline: none;
+    font-size: 13px;
+    border-radius: 4px;
+    font-family: "Poppins", sans-serif;
+    padding: 12px 10px;
+    font-weight: 400;
+    width: 100%;
+    box-sizing: border-box;
+    background: white;
+    color: grey;
+    border: 1px solid white;
+  }
+  
+  input:focus {
+    border: 1px solid #f3f3f3;
+  }
+  
+  button {
+    border: none;
+    box-shadow: none;
+    font-family: "Poppins", sans-serif;
+    background-color:#217AFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+  
+</style>
+<body>
+
+  <div class="front_card">
+    <form action="{% url 'login' %}" class="signup_form" method="POST">
+        {% csrf_token %}
+      <h1>Signup</h1>
+      <label for="username">Username</label>
+      {{ form.username }}
+      <label for="email">Email</label>
+      {{ form.email}}
+
+      <label for="password">Password</label>
+     {{ form.password1 }}
+      <label for="password">Password</label>
+      {{ form.password2 }}
+      
+        
+      <button class="login_btn">Signup</button>
+    </form>
+
+
+  </div>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
